@@ -8,7 +8,7 @@ public interface SampleService {
 
 	void updateSample(SampleVO vo) throws Exception;
 
-	void deleteSample(SampleVO vo) throws Exception;
+	void deleteSample(String sampleId) throws Exception;
 
 	SampleVO selectSample(SampleVO vo) throws Exception;
 

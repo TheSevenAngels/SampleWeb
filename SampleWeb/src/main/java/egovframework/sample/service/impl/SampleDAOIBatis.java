@@ -4,34 +4,40 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 import egovframework.sample.service.SampleDAO;
 import egovframework.sample.service.SampleVO;
 
 @Repository("daoIBatis")
-public class SampleDAOIBatis implements SampleDAO {
-	public SampleDAOIBatis() throws Exception  {
-		System.out.println("SampleDAOIBatis");
-	}
+public class SampleDAOIBatis extends EgovAbstractDAO implements SampleDAO {
 
+	public SampleDAOIBatis() {
+		System.out.println("===> SampleDAOIBatis 생성");
+	}
+	
 	public void insertSample(SampleVO vo) throws Exception {
-		System.out.println("DAOIBatis insertSample");
+		System.out.println("===> iBATIS로 insertSample() 기능 처리");
+		insert("SampleDAO.insertSample", vo);
 	}
-
+	
 	public void updateSample(SampleVO vo) throws Exception {
-		System.out.println("DAOIBatis updateSample");
+		System.out.println("===> iBATIS로 updateSample() 기능 처리");
+		update("SampleDAO.updateSample", vo);
 	}
-
-	public void deleteSample(SampleVO vo) throws Exception {
-		System.out.println("DAOIBatis deleteSample");
+	
+	public void deleteSample(String sampleId) throws Exception {
+		System.out.println("===> iBATIS로 deleteSample() 기능 처리");
+		delete("SampleDAO.deleteSample", sampleId);
 	}
-
+	
 	public SampleVO selectSample(SampleVO vo) throws Exception {
-		System.out.println("DAOIBatis selectSample");
-		return null;
+		System.out.println("===> iBATIS로 selectSample() 기능 처리");
+		return (SampleVO) select("SampleDAO.selectSample", vo);
+	}
+	
+	public List<SampleVO> selectSampleList(SampleVO vo) throws Exception {
+		System.out.println("===> iBATIS로 selectSampleList() 기능 처리");
+		return (List<SampleVO>) list("SampleDAO.selectSampleList", vo);
 	}
 
-	public List<SampleVO> selectSampleList(SampleVO vo) throws Exception {
-		System.out.println("DAOIBatis selectSampleList");
-		return null;
-	}
 }

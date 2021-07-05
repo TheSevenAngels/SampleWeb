@@ -8,6 +8,8 @@ public class SampleVO {
 	private String regUser;
 	private String content;
 	private Date regDate;
+	private String searchCondition;
+	private String searchKeyword;
 
 	// Getter/Setter 메소드는 ALT+SHIFT+S를 누르고 생성하면 됨.
 	public String getId() {
@@ -53,6 +55,23 @@ public class SampleVO {
 	@Override
 	public String toString() {
 		return "SampleVO [id=" + id + ", title=" + title + ", regUser=" + regUser + ", content=" + content
-				+ ", regDate=" + regDate + "]";
+				+ ", regDate=" + regDate + ", searchCondition=" + searchCondition + ", searchkeyword=" + searchKeyword
+				+ "]";
+	}
+
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+
+	public void setSearchKeyword(String searchkeyword) {
+		this.searchKeyword = searchkeyword;
 	}
 }
