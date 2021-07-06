@@ -56,11 +56,11 @@ public class SampleDAOJDBC implements SampleDAO {
 		JDBCUtil.close(stmt, conn);
 	}
 
-	public void deleteSample(String sampleId) throws Exception {
+	public void deleteSample(SampleVO vo) throws Exception {
 		System.out.println("===> JDBC로 deleteSample() 기능 처리");
 		conn = JDBCUtil.getConnection();
 		stmt = conn.prepareStatement(SAMPLE_DELETE);
-		stmt.setString(1, sampleId);
+		stmt.setString(1, vo.getId());
 		stmt.executeUpdate();
 		JDBCUtil.close(stmt, conn);
 	}

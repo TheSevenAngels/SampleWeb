@@ -17,7 +17,7 @@ import egovframework.sample.service.SampleVO;
 @Service("sampleService")
 public class SampleServiceImpl extends EgovAbstractServiceImpl implements SampleService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SampleServiceImpl.class);
-	@Resource(name = "daoIBatis")
+	@Resource(name = "daoMyBatis")
 	private SampleDAO sampleDAO;
 
 	@Resource(name = "egovIdGnrService")
@@ -39,8 +39,8 @@ public class SampleServiceImpl extends EgovAbstractServiceImpl implements Sample
 		sampleDAO.updateSample(vo);
 	}
 
-	public void deleteSample(String sampleId) throws Exception {
-		sampleDAO.deleteSample(sampleId);
+	public void deleteSample(SampleVO vo) throws Exception {
+		sampleDAO.deleteSample(vo);
 	}
 
 	public SampleVO selectSample(SampleVO vo) throws Exception {

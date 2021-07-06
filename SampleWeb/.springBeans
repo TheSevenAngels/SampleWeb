@@ -14,6 +14,7 @@
 		<config>src/main/resources/egovframework/spring/context-idgen.xml</config>
 		<config>src/main/webapp/WEB-INF/config/dispatcher-servlet.xml</config>
 		<config>src/main/resources/egovframework/spring/context-sqlMap.xml</config>
+		<config>src/main/resources/egovframework/spring/context-mapper.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

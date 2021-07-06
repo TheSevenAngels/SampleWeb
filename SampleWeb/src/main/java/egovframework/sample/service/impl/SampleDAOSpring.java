@@ -40,9 +40,9 @@ public class SampleDAOSpring implements SampleDAO {
 		spring.update(SAMPLE_UPDATE, args);
 	}
 
-	public void deleteSample(String sampleId) throws Exception {
+	public void deleteSample(SampleVO vo) throws Exception {
 		System.out.println("===> Spring으로 deleteSample() 기능 처리");
-		spring.update(SAMPLE_DELETE, sampleId);
+		spring.update(SAMPLE_DELETE, vo);
 	}
 
 	public SampleVO selectSample(SampleVO vo) throws Exception {

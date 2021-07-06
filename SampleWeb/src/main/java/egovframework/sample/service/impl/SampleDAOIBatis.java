@@ -25,9 +25,9 @@ public class SampleDAOIBatis extends EgovAbstractDAO implements SampleDAO {
 		update("SampleDAO.updateSample", vo);
 	}
 	
-	public void deleteSample(String sampleId) throws Exception {
+	public void deleteSample(SampleVO vo) throws Exception {
 		System.out.println("===> iBATIS로 deleteSample() 기능 처리");
-		delete("SampleDAO.deleteSample", sampleId);
+		delete("SampleDAO.deleteSample", vo);
 	}
 	
 	public SampleVO selectSample(SampleVO vo) throws Exception {

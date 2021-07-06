@@ -8,7 +8,7 @@ public interface SampleDAO {
 
 	void updateSample(SampleVO vo) throws Exception;
 
-	void deleteSample(String sampleId) throws Exception;
+	void deleteSample(SampleVO vo) throws Exception;
 
 	SampleVO selectSample(SampleVO vo) throws Exception;
 

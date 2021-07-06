@@ -55,9 +55,9 @@ public class SampleController {
 	}
 
 	@RequestMapping(value = "/deleteSample.do")
-	public String deleteSample(@RequestParam("id") String sampleId) throws Exception {
+	public String deleteSample(SampleVO vo) throws Exception {
 
-		sampleService.deleteSample(sampleId);
+		sampleService.deleteSample(vo);
 
 		return "forward:selectSampleList.do";
 	}
